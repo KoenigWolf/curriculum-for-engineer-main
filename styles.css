@@ -1,0 +1,363 @@
+/* Google Fontsを使用する場合 */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* CSS変数によるテーマ設定 */
+:root {
+    /* カラーパレット */
+    --background-color: #121212; /* ブラック系背景 */
+    --secondary-color: #1e1e1e; /* ダークグレー */
+    --text-color: #e0e0e0; /* ライトグレー */
+    --header-background: #1e90ff; /* ブルー系メインカラー */
+    --footer-background: #1f2d3d; /* ダークブルー */
+    --link-color: #1e90ff; /* ブルー系メインカラー */
+    --link-hover-color: #ff9800; /* オレンジ系アクセントカラー */
+    --button-background: #1e90ff; /* ブルー系メインカラー */
+    --button-hover-background: #ff9800; /* オレンジ系アクセントカラー */
+    --border-color: #333333; /* ダークグレー */
+    --shadow-color: rgba(0, 0, 0, 0.5); /* ブラックシャドウ */
+    --font-family: 'Roboto', sans-serif;
+    --transition-speed: 0.3s;
+    --max-width: 1200px;
+    --container-padding: 30px;
+    /* アクセントカラー */
+    --accent-color: #ff9800; /* オレンジ系 */
+}
+
+/* ダークモードが既定のため、ライトモードはオプションとして残す */
+@media (prefers-color-scheme: light) {
+    :root {
+        --background-color: #f4f4f4;
+        --secondary-color: #ffffff;
+        --text-color: #333333;
+        --header-background: #1e90ff;
+        --footer-background: #2c3e50;
+        --link-color: #1e90ff;
+        --link-hover-color: #ff9800;
+        --button-background: #1e90ff;
+        --button-hover-background: #ff9800;
+        --border-color: #dddddd;
+        --shadow-color: rgba(0, 0, 0, 0.1);
+        --accent-color: #ff9800;
+    }
+}
+
+/* 基本設定 */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+/* ヘッダー設定 */
+header {
+    background-color: var(--header-background);
+    color: var(--secondary-color);
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+header .tagline {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+}
+
+/* コンテナ設定 */
+.container {
+    max-width: var(--max-width);
+    margin: 40px auto;
+    padding: var(--container-padding);
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+/* 見出し設定 */
+h2 {
+    color: var(--header-background);
+    border-bottom: 3px solid var(--header-background);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    font-size: 2rem;
+}
+
+/* リストの設定 */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.curriculum-item {
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color var(--transition-speed);
+}
+
+.curriculum-item:last-child {
+    border-bottom: none;
+}
+
+.curriculum-item:hover {
+    background-color: var(--secondary-color);
+}
+
+/* アコーディオンボタンのスタイル */
+.accordion {
+    background-color: var(--header-background);
+    color: var(--secondary-color);
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.2rem;
+    transition: background-color var(--transition-speed);
+    border-radius: 5px;
+}
+
+.accordion:hover,
+.accordion.active {
+    background-color: var(--accent-color);
+}
+
+.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: var(--secondary-color);
+    overflow: hidden;
+    border-left: 3px solid var(--accent-color);
+    margin-top: 10px;
+    border-radius: 0 0 5px 5px;
+}
+
+/* 検索バーのスタイル */
+#search {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+#search:focus {
+    border-color: var(--header-background);
+    box-shadow: 0 0 5px var(--header-background);
+    outline: none;
+}
+
+/* フォームのスタイル */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: 600;
+    display: block;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed), background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--header-background);
+    box-shadow: 0 0 5px var(--header-background);
+    outline: none;
+}
+
+button[type="submit"] {
+    background-color: var(--button-background);
+    color: var(--secondary-color);
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+    background-color: var(--button-hover-background);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+/* 戻るリンクのスタイル */
+.back-link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.back-link a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition-speed);
+}
+
+.back-link a:hover,
+.back-link a:focus {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+    outline: none;
+}
+
+/* フッター設定 */
+footer {
+    background-color: var(--footer-background);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 20px 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 4px var(--shadow-color);
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* レスポンシブデザイン */
+
+/* レスポンシブデザイン: 1024px以下 */
+@media (max-width: 1024px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .curriculum-link {
+        font-size: 1.1rem;
+    }
+
+    .curriculum-description {
+        font-size: 0.95rem;
+    }
+
+    button[type="submit"] {
+        padding: 12px 18px;
+        font-size: 0.95rem;
+    }
+}
+
+/* レスポンシブデザイン: 768px以下 */
+@media (max-width: 768px) {
+    header {
+        padding: 30px 15px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header .tagline {
+        font-size: 1rem;
+    }
+
+    .container {
+        padding: 25px;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .curriculum-item {
+        padding: 15px;
+    }
+
+    .curriculum-description {
+        font-size: 0.9rem;
+    }
+
+    button[type="submit"] {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+/* レスポンシブデザイン: 480px以下 */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header .tagline {
+        font-size: 0.9rem;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .curriculum-link {
+        font-size: 1rem;
+    }
+
+    .curriculum-description {
+        font-size: 0.85rem;
+    }
+
+    button[type="submit"] {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+}
+
+/* スムーズスクロール */
+html {
+    scroll-behavior: smooth;
+}
+
+/* フォーカスのアウトラインをカスタマイズ */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 2px dashed var(--header-background);
+    outline-offset: 4px;
+}

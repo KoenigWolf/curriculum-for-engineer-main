@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>お問い合わせ - エンジニア未経験者向けカリキュラム</title>
+
+   <!-- SEOとセキュリティ対策 -->
+   <meta name="description" content="エンジニア未経験者向けカリキュラムへのお問い合わせページです。ご質問やご意見がございましたら、以下のフォームからお気軽にご連絡ください。">
+   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self';">
+
+   <!-- スタイルシート -->
+   <link rel="stylesheet" href="styles.css">
+
+   <!-- Google Fontsの追加（オプション） -->
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+   <header>
+      <h1>エンジニア未経験者向けカリキュラム</h1>
+      <p class="tagline">ステップバイステップでエンジニアへの道を切り開こう</p>
+   </header>
+
+   <main class="container">
+      <section id="contact">
+         <h2>お問い合わせ</h2>
+         <form action="/submit_contact" method="POST" class="contact-form">
+            <div class="form-group">
+               <label for="name">名前:</label>
+               <input type="text" id="name" name="name" required minlength="3" placeholder="あなたの名前">
+            </div>
+            <div class="form-group">
+               <label for="email">メールアドレス:</label>
+               <input type="email" id="email" name="email" required placeholder="あなたのメールアドレス">
+            </div>
+            <div class="form-group">
+               <label for="message">メッセージ:</label>
+               <textarea id="message" name="message" rows="5" required placeholder="お問い合わせ内容"></textarea>
+            </div>
+            <button type="submit">送信</button>
+         </form>
+         <p class="back-link"><a href="index.html">← ホームに戻る</a></p>
+      </section>
+   </main>
+
+   <footer>
+      <p>&copy; 2024 ITエンジニア未経験者向けカリキュラム. All Rights Reserved.</p>
+   </footer>
+
+   <!-- JavaScript (必要に応じて追加) -->
+</body>
+
+</html>
